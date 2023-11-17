@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription App</title>
+</head>
+<body>
+<h1>Transcription App</h1>
+<input type="text" id="string">
+<button onclick="transcript()">Transcribe</button>
+<div id="result"></div>
+<script>
+    function transcript() {
+        let arr_eng = ["banana", "apple", "orange", "pen", "pencil", "book"];
+        let arr_vie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+        let inputString = document.getElementById("string").value.toLowerCase();
+        let index_eng = arr_eng.indexOf(inputString);
+        if (index_eng !== -1) {
+            document.getElementById("result").textContent = arr_vie[index_eng];
+        } else {
+            document.getElementById("result").textContent = "Word not found";
+        }
+    }
+</script>
+</body>
+</html>
